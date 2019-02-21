@@ -68,16 +68,11 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // justifyContent: 'center',
     backgroundColor: 'white',
   },
   header: {
     flex: 1,
     width: '100%',
-
-    // alignItems: 'center',
-    // justifyContent: 'center',
-    // backgroundColor: '#00BFFF',
   },
   main: {
     flex: 1,
@@ -85,7 +80,6 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     width: "90%",
-    // flex: 5,
     position: "absolute",
     backgroundColor: 'white',
     borderColor: '#F5F5F5',
