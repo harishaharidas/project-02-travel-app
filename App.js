@@ -8,7 +8,7 @@
  */
 
 import React, { Component } from 'react';
-import { StyleSheet, KeyboardAvoidingView, Text, View, Image, ImageBackground, StatusBar } from 'react-native';
+import { StyleSheet, KeyboardAvoidingView, Text, View, Image, ImageBackground, StatusBar, ScrollView, TouchableOpacity } from 'react-native';
 
 import appIcon from './src/Images/icon.jpg';
 import backgroundImage from './src/Images/background.jpg';
@@ -25,42 +25,55 @@ export default class App extends Component {
 
   render() {
     return (
-      <KeyboardAvoidingView style={styles.container}>
+      <View style={styles.container}>
         <StatusBar backgroundColor="transparent" translucent />
-        <View style={styles.header}>
-          <ImageBackground source={backgroundImage}
-            style={{ width: '100%', height: '100%', alignItems: 'center', justifyContent: 'center' }}>
-            <Image source={appIcon}
-              style={{ width: 120, height: 120 }} />
-            <Text style={{ color: 'white', fontSize: 24, fontWeight: 'bold' }}>Sign In</Text>
-          </ImageBackground>
-        </View>
-
-        <View style={styles.main}>
-        </View>
-
-        <View style={styles.inputContainer}>
-          <View style={styles.firstInput}>
-            <InputItem
-              contentInput="Name or E-mail"
-              icon="account"
-            />
+        <ScrollView contentContainerStyle={{ flex: 1 }}>
+          <View style={styles.header}>
+            <ImageBackground source={backgroundImage}
+              style={{ width: '100%', height: '100%', alignItems: 'center', justifyContent: 'center' }}>
+              <Image source={appIcon}
+                style={{ width: 120, height: 120 }} />
+              <Text style={{ color: 'white', fontSize: 28, fontWeight: 'bold' }}>Sign In</Text>
+            </ImageBackground>
           </View>
-          <View style={styles.secondInput}>
-            <InputItem
-              contentInput="Password"
-              icon="lock-outline"
-            />
+          <View style={styles.main}>
           </View>
-        </View>
+          <View style={styles.inputContainer}>
+            <View style={styles.firstInput}>
+              <InputItem
+                contentInput="Name or E-mail"
+                icon="account"
+                check={false}
+              />
+            </View>
+            <View style={styles.secondInput}>
+              <InputItem
+                contentInput="Password"
+                icon="eye-outline"
+                check={true}
+              />
+            </View>
+          </View>
 
-        <View style={styles.sub}>
-          <AddButton 
-          buttonName="Sign In"
-          />
-        </View>
+          <View style={styles.sub}>
+            <AddButton
+              buttonName="Sign In"
+              buttonWidth='300'
+            />
+            <View style={{ flexDirection: 'row' }}>
+              <Text style={{ color: '#A9A9A9', fontSize: 16 }}>Don't have an account?
+              </Text>
+              <TouchableOpacity>
+                <Text style={{ color: '#808080', fontSize: 16, fontWeight: 'bold' }}>
+                  Create Now
+              </Text>
+              </TouchableOpacity>
 
-      </KeyboardAvoidingView>
+            </View>
+
+          </View>
+        </ScrollView>
+      </View>
     );
   }
 }
@@ -68,33 +81,31 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // justifyContent: 'center',
+
     backgroundColor: 'white',
   },
   header: {
     flex: 1,
     width: '100%',
 
-    // alignItems: 'center',
-    // justifyContent: 'center',
-    // backgroundColor: '#00BFFF',
   },
   main: {
     flex: 1,
-    alignItems: 'center'
+    alignItems: 'center',
+
   },
   inputContainer: {
     width: "90%",
-    // flex: 5,
+    flex: 1,
     position: "absolute",
     backgroundColor: 'white',
     borderColor: '#F5F5F5',
-    borderWidth: 0.5,
+    borderWidth: 1,
     borderRadius: 12,
     margin: 20,
     marginTop: 280,
     padding: 20,
-    paddingBottom: 40,
+    paddingBottom: 70,
     paddingTop: 40,
   },
   firstInput: {
@@ -111,7 +122,11 @@ const styles = StyleSheet.create({
     margin: 5
   },
   sub: {
-    justifyContent: 'center'
+    alignItems: 'center',
+    position: "absolute",
+    marginTop: 530,
+    width: "80%",
+    marginLeft: 40,
   }
 
 });
