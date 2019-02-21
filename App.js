@@ -35,10 +35,8 @@ export default class App extends Component {
             <Text style={{ color: 'white', fontSize: 24, fontWeight: 'bold' }}>Sign In</Text>
           </ImageBackground>
         </View>
-
         <View style={styles.main}>
         </View>
-
         <View style={styles.inputContainer}>
           <View style={styles.firstInput}>
             <InputItem
@@ -53,13 +51,11 @@ export default class App extends Component {
             />
           </View>
         </View>
-
         <View style={styles.sub}>
           <AddButton 
           buttonName="Sign In"
           />
         </View>
-
       </KeyboardAvoidingView>
     );
   }
