@@ -21,9 +21,10 @@ class InputItem extends Component {
                 <View style={styles.nameInput}>
                     <Text style={{ color: '#D3D3D3', fontSize: 16 }}>{this.props.contentInput}</Text>
                     <TextInput
-                        style={{ width: "100%", fontSize: 18 }}
+                        style={{ width: "100%", fontSize: 18}}
                         placeholder="Enter"
                         value={this.state.conent}
+                        secureTextEntry={this.props.check}
                         onChangeText={this.contentHandler}
                     />
                 </View>
@@ -48,10 +49,12 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
     },
     nameInput: {
-        flex: 3
+        flex: 3,
+    
     },
     inputIcon: {
-        flex: 1
+        flex: 1,
+        paddingTop:30
     }
 });
 

@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
-import { Button, StyleSheet, View } from 'react-native';
+import { Text, StyleSheet, TouchableOpacity } from 'react-native';
 
 class AddButton extends Component {
 
     render() {
 
         return (
-            <View style={styles.buttonContent}>
-                <Button
-                    title={this.props.buttonName}
-                    color="#00BFFF"
-                />
-            </View>
+            <TouchableOpacity>
+                <Text style={[styles.buttonContent]}>
+                    {this.props.buttonName}
+                </Text>
+            </TouchableOpacity>
         );
     }
 }
@@ -19,13 +18,15 @@ const styles = StyleSheet.create({
     buttonContent: {
         textAlign: "center",
         color: 'white',
-        fontSize: 24,
+        fontSize: 20,
         fontWeight: 'bold',
-        width:"50%",
-        // paddinig:15,
-        justifyContent: 'center',
-    }
-
+        padding: 16,
+        width: 300,
+        borderColor: "#00BFFF",
+        borderWidth: 1,
+        backgroundColor: "#00BFFF",
+        borderRadius: 32
+    },
 });
 
 export default AddButton;
