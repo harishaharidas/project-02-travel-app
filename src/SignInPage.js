@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { StyleSheet, KeyboardAvoidingView, Text, View, Image, ImageBackground, StatusBar, ScrollView, TouchableOpacity } from 'react-native';
 
-import appIcon from './Images/icon.jpg';
-import backgroundImage from './Images/background.jpg';
+import appIcon from '../src/Images/icon.jpg';
+import backgroundImage from '../src/Images/background.jpg';
 
-import InputItem from "./componets/InputItem/InputItem";
-import AddButton from "./componets/AddButton/AddButton";
+import InputItem from "../src/componets/InputItem/InputItem";
+import AddButton from "../src/componets/AddButton/AddButton";
 
 export default class SignInPage extends Component {
 
@@ -58,7 +58,6 @@ export default class SignInPage extends Component {
                   Create Now
               </Text>
               </TouchableOpacity>
-
             </View>
 
           </View>
