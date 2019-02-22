@@ -45,7 +45,6 @@ export default class SignInPage extends Component {
               />
             </View>
           </View>
-
           <View style={styles.sub}>
             <AddButton
               buttonName="Sign In"
