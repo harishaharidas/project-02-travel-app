@@ -9,7 +9,8 @@
 
 import React, { Component } from 'react';
 import {} from 'react-native';
-import SignInPage from './src/SignInPage';
+import SignInPage from './src/screens/SignInPage';
+import JourneyDetails from './src/screens/JourneyDetails'
 
 
 export default class App extends Component {
@@ -17,7 +18,8 @@ export default class App extends Component {
 
   render() {
     return (
-      <SignInPage/>
+      // <SignInPage/>
+      <JourneyDetails />
     );
   }
 }
