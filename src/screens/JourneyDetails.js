@@ -21,11 +21,15 @@ export default class JourneyDetails extends Component {
     return (
       <View style={styles.container}>
         <StatusBar backgroundColor="transparent" translucent />
-        <View style={{ height: 70 }}>
+        <View style={{ height: 70}}>
           <ImageBackground source={backGroundImageTop} style={[styles.backGroundTop, { justifyContent: 'space-between' }]} >
-            <TouchableOpacity><Icon name='chevron-left' style={styles.backIconStyle} /></TouchableOpacity>
-            <Text style={styles.planTicketText}>Plane Ticket</Text>
-            <View></View>
+            <TouchableOpacity style={{ width: 80}}>
+              <Icon name='chevron-left' style={styles.backIconStyle} />
+            </TouchableOpacity>
+
+            <View style={{ flex: 1, marginLeft:-40, justifyContent:'center',alignItems:'center'}}>
+              <Text style={styles.planTicketText}>Plane Ticket</Text>
+            </View>
           </ImageBackground>
         </View>
         <ScrollView style={styles.formSection}>
@@ -56,13 +60,13 @@ export default class JourneyDetails extends Component {
               iconName='map-marker'
               keyBoardType='default'
             />
-            <MyDatePicker 
-            placeHolder='Departure Date'
-            DateIcon='calendar-clock'
+            <MyDatePicker
+              placeHolder='Departure Date'
+              DateIcon='calendar-clock'
             />
-            <MyDatePicker 
-            placeHolder='Return Date'
-            DateIcon='calendar-clock'
+            <MyDatePicker
+              placeHolder='Return Date'
+              DateIcon='calendar-clock'
             />
             <MyTextField
               placeHolder='Number of Passengers'
@@ -81,7 +85,7 @@ export default class JourneyDetails extends Component {
                 <Icon name='chevron-down' style={styles.moreDetailIcon} /></Text>
             </TouchableOpacity>
           </View>
-          <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
+          <View style={{height:80, justifyContent: 'center', borderWidth: 3, borderColor: 'black' }}>
             <TouchableOpacity style={styles.searchButton}>
               <Text style={{ color: 'white', fontSize: 18 }}>Search Flights</Text>
             </TouchableOpacity>
@@ -104,13 +108,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
-    height: '100%',
+    // height: '100%',
     flex: 1,
   },
   backIconStyle: {
-    fontSize: 60,
+    fontSize: 50,
     color: 'white',
-    paddingTop: 10,
+    paddingTop: 20,
     fontWeight: '100',
   },
   planTicketText: {
@@ -173,6 +177,7 @@ const styles = StyleSheet.create({
     paddingTop: 15,
     marginLeft: 16,
     marginRight: 20,
+    backgroundColor: 'yellow'
   },
   moreDetailsText: {
     paddingTop: 35,
@@ -183,6 +188,7 @@ const styles = StyleSheet.create({
     flex: 1,
     fontSize: 12,
     flexDirection: 'row',
+    backgroundColor:'blue',
     justifyContent: 'flex-end',
   },
   moreDetailIcon: {
@@ -193,9 +199,9 @@ const styles = StyleSheet.create({
     height: 60,
     width: 240,
     backgroundColor: '#4286f4',
-    borderRadius: 45,
+    borderRadius: 30,
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 20,
-  },
+    marginVertical:10
+    },
 });
