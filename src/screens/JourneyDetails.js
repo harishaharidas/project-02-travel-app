@@ -21,9 +21,10 @@ export default class JourneyDetails extends Component {
       <View style={styles.container}>
         <StatusBar backgroundColor="transparent" translucent />
         <View style={{ height: 70 }}>
-          <ImageBackground source={backGroundImageTop} style={[styles.backGroundTop]} >
+          <ImageBackground source={backGroundImageTop} style={[styles.backGroundTop,{justifyContent: 'space-between'}]} >
             <TouchableOpacity><Icon name='chevron-left' style={styles.backIconStyle} /></TouchableOpacity>
             <Text style={styles.planTicketText}>Plane Ticket</Text>
+            <View></View>
           </ImageBackground>
         </View>
         <ScrollView>
@@ -89,6 +90,8 @@ const styles = StyleSheet.create({
   },
   backGroundTop: {
     flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
     width: '100%',
     height: '100%',
     flex: 1,
@@ -102,16 +105,16 @@ const styles = StyleSheet.create({
   planTicketText: {
     textAlign: 'center',
     color: 'white',
-    marginTop: 30,
+    marginTop: 20,
+    marginLeft: -60,
     fontSize: 20,
-    marginLeft: 90
   },
   semicircle: {
     height: 150,
     width: 150,
     borderRadius: 75,
     top: 75,
-    left: 130,
+    // left: '180%',
     backgroundColor: 'white'
   },
   flightImage: {
@@ -127,8 +130,8 @@ const styles = StyleSheet.create({
   },
   tripType: {
     flexDirection: 'row',
-    height: 40,
-    width: 380,
+    height: '10%',
+    width: '95%',
     marginLeft: 15,
     marginTop: 45,
     borderTopLeftRadius: 45,

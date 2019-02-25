@@ -9,7 +9,7 @@
 
 import React, { Component } from 'react';
 import {} from 'react-native';
-import SignInPage from './src/screens/SignInPage';
+// import SignInPage from './src/screens/SignInPage';
 import JourneyDetails from './src/screens/JourneyDetails'
 
 
