@@ -11,9 +11,10 @@ import React, { Component } from 'react';
 import { StyleSheet, Image, ImageBackground, StatusBar, View, Text, TouchableOpacity, ScrollView } from 'react-native';
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import backGroundImageTop from '../Images/background.jpg'
-import flightImage from '../Images/icon.jpg'
-import MyTextField from '../componets/MyTextField/MyTextField'
+import backGroundImageTop from '../Images/background.jpg';
+import flightImage from '../Images/icon.jpg';
+import MyTextField from '../componets/MyTextField/MyTextField';
+import MyDatePicker from '../componets/MyDatePicker/MyDatePicker'
 
 export default class JourneyDetails extends Component {
   render() {
@@ -21,56 +22,66 @@ export default class JourneyDetails extends Component {
       <View style={styles.container}>
         <StatusBar backgroundColor="transparent" translucent />
         <View style={{ height: 70 }}>
-          <ImageBackground source={backGroundImageTop} style={[styles.backGroundTop,{justifyContent: 'space-between'}]} >
+          <ImageBackground source={backGroundImageTop} style={[styles.backGroundTop, { justifyContent: 'space-between' }]} >
             <TouchableOpacity><Icon name='chevron-left' style={styles.backIconStyle} /></TouchableOpacity>
             <Text style={styles.planTicketText}>Plane Ticket</Text>
             <View></View>
           </ImageBackground>
         </View>
-        <ScrollView>
+        <ScrollView style={styles.formSection}>
           <ImageBackground source={backGroundImageTop} style={[styles.backGroundTop]} >
             <View style={styles.semicircle}>
               <Image source={flightImage} style={styles.flightImage} />
             </View>
           </ImageBackground>
-          <View style={styles.formSection}>
-            <View style={styles.tripType}>
-              <TouchableOpacity style={[styles.tripSelect]}><Text style={[styles.tripSelectText, { color: 'white' }]}>Round</Text></TouchableOpacity>
-              <TouchableOpacity style={[styles.tripSelect, { backgroundColor: 'transparent' }]}><Text style={styles.tripSelectText}>One Way</Text></TouchableOpacity>
-              <TouchableOpacity style={[styles.tripSelect, { backgroundColor: 'transparent' }]}><Text style={styles.tripSelectText}>Multi</Text></TouchableOpacity>
-            </View>
-            <View style={styles.inputFields}>
-              <MyTextField
-                placeHolder='From'
-                iconName='map-marker'
-              />
-              <MyTextField
-                placeHolder='To'
-                iconName='map-marker'
-              />
-              <MyTextField
-                placeHolder='Departure Date'
-                iconName='bus'
-              />
-              <MyTextField
-                placeHolder='Return Date'
-                iconName='bus'
-              />
-              <MyTextField
-                placeHolder='Number of Passengers'
-                iconName='account'
-              />
-              <MyTextField
-                placeHolder='Flight Class'
-                iconName='crown'
-              />
-            </View>
-            <TouchableOpacity>
-              <View style={styles.moreDetailFlex}>
-                <Text style={styles.moreDetailsText}>more details</Text>
-                <Icon name='chevron-down' style={styles.moreDetailIcon} />
-              </View>
+          <View style={styles.tripType}>
+            <TouchableOpacity style={[styles.tripSelect]}>
+              <Text style={[styles.tripSelectText, { color: 'white' }]}>Round</Text>
             </TouchableOpacity>
+            <TouchableOpacity style={[styles.tripSelect, { backgroundColor: 'transparent' }]}>
+              <Text style={styles.tripSelectText}>One Way</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={[styles.tripSelect, { backgroundColor: 'transparent' }]}>
+              <Text style={styles.tripSelectText}>Multi</Text>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.inputFields}>
+            <MyTextField
+              placeHolder='From'
+              iconName='map-marker'
+              keyBoardType='default'
+            />
+            <MyTextField
+              placeHolder='To'
+              iconName='map-marker'
+              keyBoardType='default'
+            />
+            <MyDatePicker 
+            placeHolder='Departure Date'
+            DateIcon='calendar-clock'
+            />
+            <MyDatePicker 
+            placeHolder='Return Date'
+            DateIcon='calendar-clock'
+            />
+            <MyTextField
+              placeHolder='Number of Passengers'
+              iconName='account'
+              keyBoardType='number-pad'
+            />
+            <MyTextField
+              placeHolder='Flight Class'
+              iconName='crown'
+              keyBoardType='number-pad'
+            />
+          </View>
+          <View style={styles.moreDetailFlex}>
+            <TouchableOpacity>
+              <Text style={styles.moreDetailsText}>more details
+                <Icon name='chevron-down' style={styles.moreDetailIcon} /></Text>
+            </TouchableOpacity>
+          </View>
+          <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
             <TouchableOpacity style={styles.searchButton}>
               <Text style={{ color: 'white', fontSize: 18 }}>Search Flights</Text>
             </TouchableOpacity>
@@ -100,7 +111,7 @@ const styles = StyleSheet.create({
     fontSize: 60,
     color: 'white',
     paddingTop: 10,
-    fontWeight: '100'
+    fontWeight: '100',
   },
   planTicketText: {
     textAlign: 'center',
@@ -114,14 +125,13 @@ const styles = StyleSheet.create({
     width: 150,
     borderRadius: 75,
     top: 75,
-    // left: '180%',
     backgroundColor: 'white'
   },
   flightImage: {
     width: 60,
     height: 60,
     left: 45,
-    top: 18
+    top: 18,
   },
   formSection: {
     flex: 3,
@@ -132,14 +142,14 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     height: '10%',
     width: '95%',
-    marginLeft: 15,
+    marginLeft: '3%',
     marginTop: 45,
     borderTopLeftRadius: 45,
     borderBottomLeftRadius: 45,
     borderTopRightRadius: 45,
     borderBottomRightRadius: 45,
     borderWidth: 1,
-    borderColor: 'lightblue'
+    borderColor: 'lightblue',
   },
   tripSelect: {
     flex: 1,
@@ -166,25 +176,23 @@ const styles = StyleSheet.create({
   },
   moreDetailsText: {
     paddingTop: 35,
-    color: 'blue'
+    color: 'grey',
   },
   moreDetailFlex: {
-    marginBottom: 30,
+    paddingRight: '4%',
+    flex: 1,
+    fontSize: 12,
     flexDirection: 'row',
-    justifyContent: 'flex-end'
+    justifyContent: 'flex-end',
   },
   moreDetailIcon: {
     fontSize: 18,
-    textAlign: 'right',
-    paddingRight: 25,
-    paddingTop: 35,
-    color: 'blue'
+    color: 'blue',
   },
   searchButton: {
     height: 60,
     width: 240,
     backgroundColor: '#4286f4',
-    left: 90,
     borderRadius: 45,
     justifyContent: 'center',
     alignItems: 'center',
