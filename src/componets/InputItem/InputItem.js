@@ -20,7 +20,7 @@ export default class InputItem extends Component {
                 <View>
                     <Text style={{ color: '#D3D3D3'}}>{this.props.contentInput}</Text>
                     <TextInput
-                        style={{ width: "100%", marginTop:-2}}
+                        style={{ width: "100%"}}
                         placeholder="Enter"
                         value={this.state.conent}
                         secureTextEntry={this.props.check}
@@ -44,12 +44,13 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: 'center',
         justifyContent: 'space-between',
-        borderBottomColor: "#F5F5F5",
+        borderBottomColor: "#C0C0C0",
         borderColor: "#FAF8F8",
-        borderWidth: 2,
-        paddingRight: 12,
+        borderWidth: .5,
         margin: 32,
-        marginBottom: 4,
+        // marginBottom: -15,
+        marginRight:60,
+        marginLeft: 60,
         backgroundColor: '#FAF8F8',
     },
     inputIcon: {
