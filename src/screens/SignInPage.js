@@ -18,15 +18,15 @@ export default class SignInPage extends Component {
       <View style={styles.container}>
         <StatusBar backgroundColor="transparent" translucent />
         <ScrollView>
-          <View style={{ flex: 2, alignContent: 'space-between' }}>
             <ImageBackground source={backgroundImage}
-              style={{ width: '100%', height: '75%', justifyContent: 'flex-start', alignItems: 'center' }}>
-              <View style={{ height: '28%', width: '30%', backgroundColor: 'white', marginTop: '15%', borderRadius: 30 }}>
+              style={styles.backgroundStyle}>
+              <View style={styles.iconImage}>
                 <Image source={appIcon}
-                  style={{ height: 120, width: 120 }} />
+                resizeMode='cover'
+                  style={{ height: 100, width: 100, marginTop: '5%'}} />
               </View>
-              <Text style={{ color: 'white', fontSize: 22, fontWeight: '300' }}>Sign In</Text>
-              <View style={{ height: 270, marginTop: 50, width: '90%', backgroundColor: '#FAF8F8', borderRadius: 8, justifyContent: 'flex-start' }}>
+              <Text style={styles.textContent}>Sign In</Text>
+              <View style={styles.inputContent}>
                 <InputItem
                   contentInput="Name or E-mail"
                   icon="account-outline"
@@ -41,13 +41,12 @@ export default class SignInPage extends Component {
               <AddButton
                 buttonName='Sign In' />
             </ImageBackground>
-          </View>
-          <View style={{ flex: 3, flexDirection: 'row', justifyContent: 'center', marginTop:12}}>
-            <Text style={{color:'lightgrey'}}>Don't have an account,</Text>
-            <TouchableOpacity><Text style={{color: 'grey'}}>Create Now</Text></TouchableOpacity>
+          <View style={styles.footerContent}>
+            <Text style={{ color: 'lightgrey' }}>Don't have an account,</Text>
+            <TouchableOpacity><Text style={{ color: 'grey' }}>Create Now</Text></TouchableOpacity>
           </View>
         </ScrollView>
-      </View>
+      </View >
     );
   }
 }
@@ -56,14 +55,45 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  header: {
-    flex: 1,
+  backgroundStyle: {
     width: '100%',
-    height: '100%'
-  },
-  main: {
-    flex: 1,
+    height: '75%',
+    justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'green'
   },
+  iconImage: {
+    flex:1,
+    paddingBottom: '4%',
+    paddingTop: '8%',
+    paddingLeft: '2%',
+    paddingRight: '2%',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'white',
+    marginTop: '30%',
+    borderRadius: 30
+  },
+  textContent: {
+    color: 'white',
+    fontSize: 22,
+    marginTop: '3%',
+    fontWeight: '700',
+    fontWeight: '300',
+  },
+  inputContent: {
+    height: 230,
+    marginTop: '4%',
+    width: '90%',
+    backgroundColor: '#FAF8F8',
+    borderRadius: 8,
+    // backgroundColor: 'red',
+    justifyContent: 'flex-start'
+  },
+  footerContent: {
+    flex:1,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    marginTop: '15%',
+    
+  }
 });
