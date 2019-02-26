@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, KeyboardAvoidingView, Text, View, Image, ImageBackground, StatusBar, ScrollView, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Image, ImageBackground, StatusBar, ScrollView, TouchableOpacity } from 'react-native';
 
 import appIcon from '../Images/icon.jpg';
 import backgroundImage from '../Images/background.jpg';
