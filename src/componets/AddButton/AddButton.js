@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Text, StyleSheet, TouchableOpacity } from 'react-native';
 
-class AddButton extends Component {
-
+export default class AddButton extends Component {
     render() {
 
         return (
@@ -14,19 +13,19 @@ class AddButton extends Component {
         );
     }
 }
+
 const styles = StyleSheet.create({
     buttonContent: {
         textAlign: "center",
         color: 'white',
-        fontSize: 20,
+        fontSize: 16,
         fontWeight: 'bold',
-        padding: 16,
+        padding: 20,
         width: 300,
         borderColor: "#00BFFF",
         borderWidth: 1,
         backgroundColor: "#00BFFF",
-        borderRadius: 32
+        borderRadius: 32,
+        marginTop: -28,
     },
 });
-
-export default AddButton;
