@@ -76,7 +76,7 @@ export default class JourneyDetails extends Component {
             <MyTextField
               placeHolder='Flight Class'
               iconName='crown'
-              keyBoardType='number-pad'
+              keyBoardType='default'
             />
           </View>
           <View style={styles.moreDetailFlex}>
@@ -85,7 +85,7 @@ export default class JourneyDetails extends Component {
                 <Icon name='chevron-down' style={styles.moreDetailIcon} /></Text>
             </TouchableOpacity>
           </View>
-          <View style={{height:80, justifyContent: 'center', borderWidth: 3, borderColor: 'black' }}>
+          <View style={{height:80, justifyContent: 'center', alignItems: 'center'}}>
             <TouchableOpacity style={styles.searchButton}>
               <Text style={{ color: 'white', fontSize: 18 }}>Search Flights</Text>
             </TouchableOpacity>
@@ -108,7 +108,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
-    // height: '100%',
     flex: 1,
   },
   backIconStyle: {
@@ -177,7 +176,6 @@ const styles = StyleSheet.create({
     paddingTop: 15,
     marginLeft: 16,
     marginRight: 20,
-    backgroundColor: 'yellow'
   },
   moreDetailsText: {
     paddingTop: 35,
@@ -188,7 +186,6 @@ const styles = StyleSheet.create({
     flex: 1,
     fontSize: 12,
     flexDirection: 'row',
-    backgroundColor:'blue',
     justifyContent: 'flex-end',
   },
   moreDetailIcon: {
@@ -202,6 +199,6 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     justifyContent: 'center',
     alignItems: 'center',
-    marginVertical:10
+    marginVertical:30,
     },
 });
