@@ -8,16 +8,15 @@
  */
 
 import React, { Component } from 'react';
-import SignInPage from './src/Screens/SignInPage';
-
-
+import SignInPage from './src/screens/SignInPage';
+import JourneyDetails from './src/screens/JourneyDetails'
 
 export default class App extends Component {
-
 
   render() {
     return (
       <SignInPage/>
+      // <JourneyDetails />
     );
   }
 }

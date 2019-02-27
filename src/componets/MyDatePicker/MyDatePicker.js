@@ -7,12 +7,12 @@ export default class MyDatePicker extends Component {
     super(props)
     this.state = { date: "" }
   }
-
   iconFunc = () => {
     return (
       <Icon name={this.props.DateIcon} />
     );
   }
+
   render() {
     return (
       <DatePicker
@@ -23,7 +23,7 @@ export default class MyDatePicker extends Component {
         format="DD-MM-YYYY"
         minDate={new Date()}
         maxDate="25-5;2019"
-        iconComponent={<Icon name={this.props.DateIcon} style={{ fontSize: 24, color:'lightgrey' }} />}
+        iconComponent={<Icon name={this.props.DateIcon} style={{ fontSize: 24, color: 'lightgrey' }} />}
         customStyles={{
           dateIcon: {
             borderBottomWidth: 1,

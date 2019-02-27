@@ -1,12 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- * @lint-ignore-every XPLATJSCOPYRIGHT1
- */
-
 import React, { Component } from 'react';
 import { StyleSheet, Image, ImageBackground, StatusBar, View, Text, TouchableOpacity, ScrollView } from 'react-native';
 
@@ -21,14 +12,13 @@ export default class JourneyDetails extends Component {
     return (
       <View style={styles.container}>
         <StatusBar backgroundColor="transparent" translucent />
-        <View style={{ height: 70}}>
+        <View style={{ height: 70 }}>
           <ImageBackground source={backGroundImageTop} style={[styles.backGroundTop, { justifyContent: 'space-between' }]} >
-            <TouchableOpacity style={{ width: 80}}>
+            <TouchableOpacity style={{ width: 80 }}>
               <Icon name='chevron-left' style={styles.backIconStyle} />
             </TouchableOpacity>
-
-            <View style={{ flex: 1, marginLeft:-40, justifyContent:'center',alignItems:'center'}}>
-              <Text style={styles.planTicketText}>Plane Ticket</Text>
+            <View style={styles.planeTicket}>
+              <Text style={styles.planeTicketText}>Plane Ticket</Text>
             </View>
           </ImageBackground>
         </View>
@@ -85,7 +75,7 @@ export default class JourneyDetails extends Component {
                 <Icon name='chevron-down' style={styles.moreDetailIcon} /></Text>
             </TouchableOpacity>
           </View>
-          <View style={{height:80, justifyContent: 'center', alignItems: 'center'}}>
+          <View style={styles.buttonSection}>
             <TouchableOpacity style={styles.searchButton}>
               <Text style={{ color: 'white', fontSize: 18 }}>Search Flights</Text>
             </TouchableOpacity>
@@ -116,7 +106,13 @@ const styles = StyleSheet.create({
     paddingTop: 20,
     fontWeight: '100',
   },
-  planTicketText: {
+  planeTicket: {
+    flex: 1,
+    marginLeft: -40,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  planeTicketText: {
     textAlign: 'center',
     color: 'white',
     marginTop: 20,
@@ -143,10 +139,10 @@ const styles = StyleSheet.create({
   },
   tripType: {
     flexDirection: 'row',
-    height: '10%',
+    height: '7%',
     width: '95%',
     marginLeft: '3%',
-    marginTop: 45,
+    marginTop: 30,
     borderTopLeftRadius: 45,
     borderBottomLeftRadius: 45,
     borderTopRightRadius: 45,
@@ -160,7 +156,7 @@ const styles = StyleSheet.create({
     borderBottomLeftRadius: 45,
     borderTopRightRadius: 45,
     borderBottomRightRadius: 45,
-    backgroundColor: '#4286f4',
+    backgroundColor: '#33ccff',
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -173,32 +169,39 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-evenly',
-    paddingTop: 15,
-    marginLeft: 16,
-    marginRight: 20,
+    paddingTop: 30,
+    marginLeft: 12,
+    marginRight: 15,
   },
   moreDetailsText: {
-    paddingTop: 35,
-    color: 'grey',
+    marginTop: 32,
+    color: 'darkblue',
+    fontSize: 12,
   },
   moreDetailFlex: {
     paddingRight: '4%',
     flex: 1,
-    fontSize: 12,
     flexDirection: 'row',
     justifyContent: 'flex-end',
   },
   moreDetailIcon: {
-    fontSize: 18,
+    fontSize: 16,
+    paddingTop: 12,
     color: 'blue',
   },
+  buttonSection: {
+    height: 150,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingBottom: 30,
+  },
   searchButton: {
-    height: 60,
-    width: 240,
-    backgroundColor: '#4286f4',
+    height: 56,
+    width: 280,
+    backgroundColor: '#33ccff',
     borderRadius: 30,
     justifyContent: 'center',
     alignItems: 'center',
-    marginVertical:30,
-    },
+    marginVertical: 30,
+  },
 });

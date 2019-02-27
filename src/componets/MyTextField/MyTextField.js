@@ -8,7 +8,7 @@ export default class MytextField extends Component {
     return (
       <View style={styles.container}>
         <Icon name={this.props.iconName} style={styles.iconStyle} />
-        <TextInput placeholder={this.props.placeHolder} style={styles.textInputStyle} placeholderTextColor='lightgrey' keyboardType= {this.props.keyBoardType} />
+        <TextInput placeholder={this.props.placeHolder} style={styles.textInputStyle} placeholderTextColor='lightgrey' keyboardType={this.props.keyBoardType} />
       </View>
     );
   }
@@ -19,13 +19,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     borderBottomWidth: 1,
     marginLeft: 15,
-    paddingTop: 15,
     borderBottomColor: 'lightgrey'
   },
   textInputStyle: {
     width: 135,
-    height: 40,
-    // paddingBottom: -2,
+    height: 30,
+    paddingBottom: -2,
   },
   iconStyle: {
     marginTop: 12,

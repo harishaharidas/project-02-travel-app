@@ -3,10 +3,9 @@ import { Text, StyleSheet, TouchableOpacity } from 'react-native';
 
 export default class AddButton extends Component {
     render() {
-
         return (
             <TouchableOpacity>
-                <Text style={[styles.buttonContent]}>
+                <Text style={styles.buttonContent}>
                     {this.props.buttonName}
                 </Text>
             </TouchableOpacity>

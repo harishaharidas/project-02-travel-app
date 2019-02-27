@@ -3,14 +3,15 @@ import { StyleSheet, Text, View, Image, ImageBackground, StatusBar, ScrollView, 
 
 import appIcon from '../Images/icon.jpg';
 import backgroundImage from '../Images/background.jpg';
-
 import InputItem from "../componets/InputItem/InputItem";
 import AddButton from "../componets/AddButton/AddButton";
 
 export default class SignInPage extends Component {
-
-  state = {
-    content: ""
+  constructor(props) {
+    super(props);
+    this.state = {
+      content: ""
+    };
   };
 
   render() {
@@ -18,29 +19,29 @@ export default class SignInPage extends Component {
       <View style={styles.container}>
         <StatusBar backgroundColor="transparent" translucent />
         <ScrollView>
-            <ImageBackground source={backgroundImage}
-              style={styles.backgroundStyle}>
-              <View style={styles.iconImage}>
-                <Image source={appIcon}
+          <ImageBackground source={backgroundImage}
+            style={styles.backgroundStyle}>
+            <View style={styles.iconImage}>
+              <Image source={appIcon}
                 resizeMode='cover'
-                  style={{ height: 100, width: 100, marginTop: '5%'}} />
-              </View>
-              <Text style={styles.textContent}>Sign In</Text>
-              <View style={styles.inputContent}>
-                <InputItem
-                  contentInput="Name or E-mail"
-                  icon="account-outline"
-                  check={false}
-                />
-                <InputItem
-                  contentInput="Password"
-                  icon="eye-outline"
-                  check={true}
-                />
-              </View>
-              <AddButton
-                buttonName='Sign In' />
-            </ImageBackground>
+                style={styles.iconImageStyle} />
+            </View>
+            <Text style={styles.textContent}>Sign In</Text>
+            <View style={styles.inputContent}>
+              <InputItem
+                contentInput="Name or E-mail"
+                icon="account-outline"
+                check={false}
+              />
+              <InputItem
+                contentInput="Password"
+                icon="eye-outline"
+                check={true}
+              />
+            </View>
+            <AddButton
+              buttonName='Sign In' />
+          </ImageBackground>
           <View style={styles.footerContent}>
             <Text style={{ color: 'lightgrey' }}>Don't have an account,</Text>
             <TouchableOpacity><Text style={{ color: 'grey' }}>Create Now</Text></TouchableOpacity>
@@ -62,7 +63,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   iconImage: {
-    flex:1,
+    flex: 1,
     paddingBottom: '4%',
     paddingTop: '8%',
     paddingLeft: '2%',
@@ -72,6 +73,11 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     marginTop: '30%',
     borderRadius: 30
+  },
+  iconImageStyle: {
+    height: 100,
+    width: 100,
+    marginTop: '5%'
   },
   textContent: {
     color: 'white',
@@ -86,14 +92,12 @@ const styles = StyleSheet.create({
     width: '90%',
     backgroundColor: '#FAF8F8',
     borderRadius: 8,
-    // backgroundColor: 'red',
     justifyContent: 'flex-start'
   },
   footerContent: {
-    flex:1,
+    flex: 1,
     flexDirection: 'row',
     justifyContent: 'center',
     marginTop: '15%',
-    
   }
 });
